@@ -30,7 +30,6 @@ export class CartService {
     this._snackBar.open('1 item added to cart.', 'Ok', {
       duration: 3000
     });
-    console.log(this.cart.value);
   }
 
   getTotal(items: CartItem[]): number {
@@ -47,7 +46,7 @@ export class CartService {
   }
 
   removeItem(item: CartItem): void {
-    const filteredItems = this.cart.value.items.filter(item => item.id !== item.id);
+    const filteredItems = this.cart.value.items.filter(i => i.id !== item.id);
     this.cart.next({ items: filteredItems });
     this._snackBar.open('1 item removed from cart.', 'Ok', {
       duration: 3000
@@ -69,7 +68,7 @@ export class CartService {
     let filteredItems: CartItem[] = this.cart.value.items;
     
     if(itemForRemoval) {
-      filteredItems = this.cart.value.items.filter(item => item.id !== item.id);
+      filteredItems = this.cart.value.items.filter(item => item.id !== itemForRemoval?.id);
     }
 
     this.cart.next({ items: filteredItems });

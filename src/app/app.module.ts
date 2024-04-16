@@ -10,6 +10,7 @@ import { ProductsHeaderComponent } from './pages/home/components/products-header
 import { FiltersComponent } from './pages/home/components/filters/filters.component';
 import { ProductsBoxComponent } from './pages/home/components/products-box/products-box.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CartComponent } from './pages/cart/cart.component';
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
